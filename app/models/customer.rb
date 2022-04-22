@@ -1,5 +1,5 @@
 class Customer < ApplicationRecord
   has_many :orders
 
-  # validate
+  validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 end
