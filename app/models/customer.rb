@@ -1,5 +1,8 @@
 class Customer < ApplicationRecord
-  has_many :orders
+  class Customer < ApplicationRecord
+  has_many :orders, dependent: :destroy 
 
-  validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
+  validates :email, format: { with: /\A(\S+)@(.+)\.(\S+)\z/, message: "Email invalid" } 
+  validates :email, uniqueness: { case_sensitive: false }, length: { minimum: 4, maximum: 254 }
+end
 end

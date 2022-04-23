@@ -1,10 +1,26 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @menu %>
+<!-- <%= render @menu %>
 
 <div>
   <%= link_to "Edit this menu", edit_menu_path(@menu) %> |
   <%= link_to "Back to menus", menus_path %>
 
   <%= button_to "Destroy this menu", @menu, method: :delete %>
+</div> -->
+
+<div class="jumbotron">
+  <h1 class="display-4">Menu Detail</h1>
+  <p class="lead">This is the detail of menu.</p>
+  <hr class="my-4">
+  <p><%= render @menu %></p>
+
+  <div class="mt-3">
+    <%= link_to "Edit this menu", edit_menu_path(@menu), class: 'btn btn-warning btn-lg' %> |
+    <%= link_to "Back to menus", menus_path, class: 'btn btn-primary btn-lg' %>
+  </div>
+
+  <div class="mt-3">
+    <%= button_to "Destroy this menu", @menu, method: :delete, class: 'btn btn-danger btn-lg'  %>
+  </div>
 </div>
